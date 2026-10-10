@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Defines the character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the page responsive on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>BusTrack | Bus Tracking System</title>
+
+    <!-- Connects the CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <h2 class="logo">BusTrack</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#routes">Routes</a>
+            <a href="#timetable">Timetable</a>
+            <a href="#tracking">Tracking</a>
+        </nav>
+    </header>
+
+    <!-- Main banner -->
+    <section class="hero" id="home">
+        <h1>Track Your Bus. Travel Smarter.</h1>
+        <p>Find bus routes, check schedules and plan your journey.</p>
+
+        <!-- Route search form -->
+        <form id="searchForm">
+            <input
+                type="text"
+                id="source"
+                placeholder="Enter starting stop (e.g. Vaso)"
+                required
+            >
+
+            <input
+                type="text"
+                id="destination"
+                placeholder="Enter destination (e.g. Nadiad)"
+                required
+            >
+
+            <button type="submit">Search Buses</button>
+        </form>
+
+        <p id="searchMessage" role="status"></p>
+    </section>
+
+    <!-- Bus route cards -->
+    <main>
+        <section class="section" id="routes">
+            <h2>Popular Bus Routes</h2>
+
+            <div class="bus-container">
+                <article class="bus-card">
+                    <h3>Route B01</h3>
+                    <p>Vaso → Nadiad</p>
+                    <p>Departure: 08:00 AM</p>
+                    <span class="status">Scheduled</span>
+                    <br><br>
+                    <a class="map-btn" href="https://www.google.com/maps/dir/Vaso,+Gujarat,+India/Nadiad,+Gujarat,+India" target="_blank" rel="noopener noreferrer">View Route on Map</a>
+                </article>
+
+                <article class="bus-card">
+                    <h3>Route B02</h3>
+                    <p>Nadiad → Anand</p>
+                    <p>Departure: 09:30 AM</p>
+                    <span class="status">Scheduled</span>
+                    <br><br>
+                    <a class="map-btn" href="https://www.google.com/maps/dir/Nadiad,+Gujarat,+India/Anand,+Gujarat,+India" target="_blank" rel="noopener noreferrer">View Route on Map</a>
+                </article>
+
+                <article class="bus-card">
+                    <h3>Route B03</h3>
+                    <p>Anand → Vadodara</p>
+                    <p>Departure: 10:15 AM</p>
+                    <span class="status">Scheduled</span>
+                    <br><br>
+                    <a class="map-btn" href="https://www.google.com/maps/dir/Anand,+Gujarat,+India/Vadodara,+Gujarat,+India" target="_blank" rel="noopener noreferrer">View Route on Map</a>
+                </article>
+            </div>
+
+            <!-- Search results appear here -->
+            <div id="results" aria-live="polite"></div>
+        </section>
+
+        <!-- Timetable -->
+        <section class="section" id="timetable">
+            <h2>Bus Timetable</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bus</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Departure</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>B01</td>
+                            <td>Vaso</td>
+                            <td>Nadiad</td>
+                            <td>08:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>B02</td>
+                            <td>Nadiad</td>
+                            <td>Anand</td>
+                            <td>09:30 AM</td>
+                        </tr>
+                        <tr>
+                            <td>B03</td>
+                            <td>Anand</td>
+                            <td>Vadodara</td>
+                            <td>10:15 AM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Tracking section -->
+        <section class="section" id="tracking">
+            <h2>Live Bus Tracking</h2>
+            <p>
+                Track your real-time GPS position or coordinate bus location services.
+            </p>
+            <div class="tracking-box">
+                <span class="tracking-dot"></span>
+                <span>GPS integration pending</span>
+                
+                <div class="gps-controls">
+                    <!-- Button to request GPS permission -->
+                    <button id="gpsButton" type="button">
+                        Get My GPS Location
+                    </button>
+
+                    <!-- Shows GPS status and coordinates -->
+                    <p id="gpsStatus" role="status">
+                        Click the button to access GPS.
+                    </p>
+
+                    <!-- Shows a map link after getting coordinates -->
+                    <a id="mapLink" class="map-btn" target="_blank" rel="noopener noreferrer" hidden>
+                        Open Location in Google Maps
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 BusTrack. Bus information and schedules.</p>
+    </footer>
+
+    <!-- Connect JavaScript at the end of the body -->
+    <script src="script.js"></script>
+</body>
+</html>
